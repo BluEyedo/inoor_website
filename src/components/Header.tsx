@@ -24,7 +24,7 @@ const Header = (props: Props) => {
     >
       <NavbarBrand>
         <div className="flex-col">
-          <div className="font-bold text-inherit text-4xl  border-gold-500 border-b-2 ">
+          <div className="font-bold text-inherit text-4xl  border-gold-500 border-b-[3px] ">
             INOOR
           </div>
         </div>

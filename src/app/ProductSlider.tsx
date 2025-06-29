@@ -3,12 +3,14 @@
 import React, { useEffect, useRef } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
+import food from "@/../public/inoor-food.png";
+import care from "@/../public/inoor-care.png";
+import Image from "next/image";
 
 // TypeScript interfaces
 interface SlideData {
   title: string;
-  description: string;
-  icon: string;
+  src: any;
   bgColor: string;
   features: string[];
 }
@@ -26,82 +28,21 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
 
   const slides: SlideData[] = [
     {
-      title: "Global Shipping",
-      description:
-        "Worldwide shipping solutions with real-time tracking and secure delivery systems.",
-      icon: "🚢",
-      bgColor: "bg-gradient-to-br from-blue-500 to-blue-700",
+      title: "Beauty Products",
+      src: care,
+      bgColor: "bg-gradient-to-br from-gold-100 to-rose-100",
       features: [
-        "Express Delivery",
-        "Global Network",
-        "Real-time Tracking",
-        "Secure Packaging",
+        "Skin care creams",
+        "Serums and treatments",
+        "Natural makeup",
+        "Cruelty-free certified products",
       ],
     },
     {
-      title: "Premium Food",
-      description:
-        "High-quality food products sourced from trusted suppliers around the globe.",
-      icon: "🍽️",
-      bgColor: "bg-gradient-to-br from-orange-400 to-orange-600",
-      features: [
-        "Organic Options",
-        "Fresh Quality",
-        "International Cuisine",
-        "Safe Processing",
-      ],
-    },
-    {
-      title: "Luxury Cosmetics",
-      description:
-        "Premium beauty products and cosmetics from leading international brands.",
-      icon: "💄",
-      bgColor: "bg-gradient-to-br from-pink-500 to-red-500",
-      features: [
-        "Premium Brands",
-        "Natural Ingredients",
-        "Dermatologist Tested",
-        "Cruelty Free",
-      ],
-    },
-    {
-      title: "Supply Chain",
-      description:
-        "Comprehensive supply chain management for efficient global operations.",
-      icon: "📦",
-      bgColor: "bg-gradient-to-br from-green-500 to-green-700",
-      features: [
-        "End-to-end Solutions",
-        "Cost Optimization",
-        "Risk Management",
-        "Digital Integration",
-      ],
-    },
-    {
-      title: "Quality Control",
-      description:
-        "Rigorous quality assurance processes ensuring the highest standards.",
-      icon: "✅",
-      bgColor: "bg-gradient-to-br from-purple-500 to-purple-700",
-      features: [
-        "ISO Certified",
-        "Regular Audits",
-        "Quality Metrics",
-        "Continuous Improvement",
-      ],
-    },
-    {
-      title: "Customer Support",
-      description:
-        "24/7 customer service with multilingual support for global clients.",
-      icon: "🎧",
-      bgColor: "bg-gradient-to-br from-indigo-500 to-indigo-700",
-      features: [
-        "24/7 Available",
-        "Multilingual",
-        "Expert Team",
-        "Quick Resolution",
-      ],
+      title: "Food & Nutrition",
+      src: food,
+      bgColor: "bg-gradient-to-br from-rose-100 to-gold-100",
+      features: ["Healthy snacks supplements", "Beauty-enhancing drinks"],
     },
   ];
 
@@ -111,8 +52,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
     perPage: 3,
     perMove: 1,
     focus: "center",
-    gap: "1rem",
-    padding: "2rem",
+    gap: "2rem",
     autoplay: true,
     interval: 4000,
     pauseOnHover: true,
@@ -179,8 +119,8 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
   return (
     <div className="splide-container h-[700px]">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
-          Our Featured Services
+        <h2 className="text-3xl font-bold text-center mb-12 text-charcoal-500">
+          Our Products
         </h2>
 
         <Splide
@@ -192,25 +132,24 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
           {slides.map((slide, index) => (
             <SplideSlide key={index}>
               <div
-                className={`slide-content rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:shadow-2xl mx-4 ${slide.bgColor}`}
+                className={`slide-content rounded-xl shadow-lg  cursor-pointer transform transition-all duration-300  mx-4 ${slide.bgColor}`}
                 onClick={() => handleSlideClick(slide, index)}
               >
                 {/* Image/Icon Area */}
-                <div className="h-48 flex items-center justify-center">
-                  <div className="text-6xl">{slide.icon}</div>
+                <div className="h-48 flex items-center justify-center slide-image duration-300 ">
+                  <Image src={slide.src} alt="" />
                 </div>
 
                 {/* Content Area */}
-                <div className="p-6 text-white">
-                  <h3 className="text-2xl font-bold mb-3">{slide.title}</h3>
-                  <p className="text-sm opacity-90 leading-relaxed">
-                    {slide.description}
-                  </p>
+                <div className="p-6 text-charcoal-500">
+                  <h3 className="text-2xl font-bold mb-3 border-b-2 border-b-gold-300">
+                    {slide.title}
+                  </h3>
 
                   {/* Features List */}
-                  <ul className="mt-4 space-y-1">
+                  <ul className="mt-4 space-y-1 ">
                     {slide.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="text-xs opacity-80">
+                      <li key={featureIndex} className=" opacity-80">
                         • {feature}
                       </li>
                     ))}
@@ -233,8 +172,13 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
 
         .custom-splide .splide__slide.is-active {
           opacity: 1;
-          transform: scale(1.2);
+          transform: scale(1.1);
           z-index: 10;
+        }
+
+        .custom-splide .splide__slide.is-active .slide-image {
+          transform: scale(1.3);
+          padding-bottom: 20px;
         }
 
         .custom-splide .splide__slide.is-prev,
@@ -295,7 +239,8 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
 
         /* Slide content styling */
         .slide-content {
-          height: 90%;
+          height: 95%;
+          margin-top: 20px;
           display: flex;
           flex-direction: column;
         }
@@ -330,7 +275,6 @@ export const ProductSliderExample: React.FC = () => {
   const handleSlideClicked = (slide: SlideData, index: number) => {
     console.log("Slide clicked:", slide.title, "at index:", index);
   };
-
 
   return (
     <div ref={splideRef}>
