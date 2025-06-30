@@ -2,6 +2,7 @@ import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import banner from "@/../public/banner.png";
+import banner2 from "@/../public/banner2.png";
 import Image from "next/image";
 
 type Props = {};
@@ -38,10 +39,10 @@ const Hero = (props: Props) => {
           />
         </SplideSlide>
         <SplideSlide key={1}>
-          <div className="bg-gradient-to-r from-white/0 to-black absolute w-full h-[467px] z-20 " />
+          <div className="bg-gradient-to-r from-white/0 to-black/90 absolute w-full h-[467px] z-20 " />
           <Image
             className=" h-[467px] w-full bg-black/70 text-white object-cover aspect-[1920/467]"
-            src={banner}
+            src={banner2}
             alt=""
           />
         </SplideSlide>

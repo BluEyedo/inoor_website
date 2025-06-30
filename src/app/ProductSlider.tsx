@@ -119,7 +119,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
   return (
     <div className="splide-container h-[700px]">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-charcoal-500">
+        <h2 className="text-6xl font-bold text-center mb-12 text-charcoal-500">
           Our Products
         </h2>
 
