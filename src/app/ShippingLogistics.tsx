@@ -41,11 +41,11 @@ const ShippingLogistics = (props: Props) => {
             transition={{ repeat: Infinity, delay: 0.2, duration: 3.5 }}
           >
             <Image
-              width={130}
-              height={130}
+              width={50}
+              height={50}
               src={GlobeIcon}
               alt=""
-              className="w-24 md:w-[150px]"
+              className="w-24 md:w-[120px]"
             />
           </motion.div>
           <p>Fast delivery to over 20 countries</p>
@@ -56,11 +56,11 @@ const ShippingLogistics = (props: Props) => {
             transition={{ repeat: Infinity, delay: 0.4, duration: 3.5 }}
           >
             <Image
-              width={130}
-              height={130}
+              width={50}
+              height={50}
               src={BoxIcon}
               alt=""
-              className="w-24 md:w-[150px]"
+              className="w-24 md:w-[120px]"
             />
           </motion.div>
           <p>Customized packaging with private labeling</p>
@@ -71,11 +71,11 @@ const ShippingLogistics = (props: Props) => {
             transition={{ repeat: Infinity, delay: 0.6, duration: 3.5 }}
           >
             <Image
-              width={130}
-              height={130}
+              width={50}
+              height={50}
               src={ShippingIcon}
               alt=""
-              className="w-24 md:w-[150px]"
+              className="w-24 md:w-[120px]"
             />
           </motion.div>
           <p>Delivery time: 5 to 14 business days</p>
@@ -86,11 +86,11 @@ const ShippingLogistics = (props: Props) => {
             transition={{ repeat: Infinity, delay: 0.2, duration: 3.5 }}
           >
             <Image
-              width={130}
-              height={130}
+              width={50}
+              height={50}
               src={DocumentIcon}
               alt=""
-              className="w-24 md:w-[150px]"
+              className="w-24 md:w-[120px]"
             />
           </motion.div>
           <p>Full shipping documentation (invoices, certificates of origin)</p>
