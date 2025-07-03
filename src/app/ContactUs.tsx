@@ -262,7 +262,7 @@ const ContactUs = (props: Props) => {
           viewport={{ once: true }}
           className="text-center mt-8 text-gray-600"
         >
-          <p className="text-lg">We'll get back to you within 24 hours! 🚀</p>
+          <p className="text-lg">{`We'll get back to you within 24 hours! 🚀`}</p>
         </motion.div>
       </div>
     </>
