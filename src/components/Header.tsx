@@ -35,56 +35,56 @@ const Header = (props: Props) => {
           <div className="flex flex-col pl-5 pt-16 gap-8">
             <Link
               className={`whitespace-nowrap overflow-hidden text-ellipsis text-xl lg:text-base ${
-                path == "/" ? "text-gold-700" : "text-charcoal-500"
+                path == "/main/" ? "text-gold-700" : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href="/"
+              href="//main/"
             >
               Home
             </Link>
 
             <Link
               className={`text-xl lg:text-base ${
-                path == "/about-us" ? "text-gold-700" : "text-charcoal-500"
+                path == "/main/about-us" ? "text-gold-700" : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href="about-us"
+              href="/about-us"
             >
               About Us
             </Link>
 
             <Link
               className={`text-xl lg:text-base ${
-                path == "/our-products" ? "text-gold-700" : "text-charcoal-500"
+                path == "/main/our-products" ? "text-gold-700" : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href="our-products"
+              href="/our-products"
             >
               Our products
             </Link>
 
             <Link
               className={`text-xl lg:text-base ${
-                path == "/shipping-logistics"
+                path == "/main/shipping-logistics"
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href="shipping-logistics"
+              href="/shipping-logistics"
             >
               Shipping and logistics
             </Link>
 
             <Link
               className={`text-xl lg:text-base ${
-                path == "/distributors" ? "text-gold-700" : "text-charcoal-500"
+                path == "/main/distributors" ? "text-gold-700" : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href="distributors"
+              href="/distributors"
             >
               Become a Distributor (B2B)
             </Link>
 
             <Link
               className={`text-xl lg:text-base ${
-                path == "/contact-us" ? "text-gold-700" : "text-charcoal-500"
+                path == "/main/contact-us" ? "text-gold-700" : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href="contact-us"
+              href="/contact-us"
             >
               Contact us
             </Link>
@@ -118,9 +118,9 @@ const Header = (props: Props) => {
           <NavbarItem>
             <Link
               className={`whitespace-nowrap overflow-hidden text-ellipsis text-xs lg:text-base ${
-                path == "/" ? "text-gold-700" : "text-charcoal-500"
+                path == "/main" ? "text-gold-700" : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href="/"
+              href="/main"
             >
               Home
             </Link>
@@ -128,9 +128,9 @@ const Header = (props: Props) => {
           <NavbarItem>
             <Link
               className={`text-xs lg:text-base ${
-                path == "/about-us" ? "text-gold-700" : "text-charcoal-500"
+                path == "/main/about-us" ? "text-gold-700" : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href="about-us"
+              href="/main/about-us"
             >
               About Us
             </Link>
@@ -138,9 +138,9 @@ const Header = (props: Props) => {
           <NavbarItem>
             <Link
               className={`text-xs lg:text-base ${
-                path == "/our-products" ? "text-gold-700" : "text-charcoal-500"
+                path == "/main/our-products" ? "text-gold-700" : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href="our-products"
+              href="/main/our-products"
             >
               Our products
             </Link>
@@ -148,11 +148,11 @@ const Header = (props: Props) => {
           <NavbarItem>
             <Link
               className={`text-xs lg:text-base ${
-                path == "/shipping-logistics"
+                path == "/main/shipping-logistics"
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href="shipping-logistics"
+              href="/main/shipping-logistics"
             >
               Shipping and logistics
             </Link>
@@ -160,9 +160,9 @@ const Header = (props: Props) => {
           <NavbarItem>
             <Link
               className={`text-xs lg:text-base ${
-                path == "/distributors" ? "text-gold-700" : "text-charcoal-500"
+                path == "/main/distributors" ? "text-gold-700" : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href="distributors"
+              href="/main/distributors"
             >
               Become a Distributor (B2B)
             </Link>
@@ -170,9 +170,9 @@ const Header = (props: Props) => {
           <NavbarItem>
             <Link
               className={`text-xs lg:text-base ${
-                path == "/contact-us" ? "text-gold-700" : "text-charcoal-500"
+                path == "/main/contact-us" ? "text-gold-700" : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href="contact-us"
+              href="/main/contact-us"
             >
               Contact us
             </Link>

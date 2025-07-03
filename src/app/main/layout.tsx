@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat, PT_Serif } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import Header from "@/components/Header";
 import { NextUIProvider } from "@nextui-org/react";
 
@@ -23,7 +23,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${ptSerif.className} `}>{children}</body>
+      <body
+        className={`${ptSerif.className} bg-gradient-to-t from-rose-100 to-white`}
+      >
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

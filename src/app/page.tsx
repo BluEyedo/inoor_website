@@ -1,32 +1,34 @@
 "use client";
-import AboutUs from "@/app/AboutUs";
-import Hero from "@/app/Hero";
-import ProductSlider from "@/app/ProductSlider";
-import Image from "next/image";
+import { LoadingOutlined } from "@ant-design/icons";
+import { Spin } from "antd";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-import ShippingLogistics from "./ShippingLogistics";
-import Ditributors from "./Ditributors";
-import ContactUs from "./ContactUs";
 
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    setTimeout(() => {
+      router.push("/main");
+    }, 1000);
+  }, []);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between ">
-      <Hero />
-      <div
-        className="py-16
-          sm:max-w-screen-sm    
-          md:max-w-screen-md
-          lg:max-w-screen-lg 
-          2xl:max-w-screen-xl
-      "
-      >
-        <AboutUs />
-        <ProductSlider />
-        <ShippingLogistics />
-        <Ditributors />
-        <ContactUs />
-      </div>
-    </main>
+    <div className="">
+      <Spin
+        indicator={
+          <LoadingOutlined
+            style={{
+              color: "#D4AF37",
+              fontSize: 80,
+              position: "fixed",
+              top: "50%",
+              left: "50%",
+            }}
+            spin
+          />
+        }
+      />
+    </div>
   );
 }
