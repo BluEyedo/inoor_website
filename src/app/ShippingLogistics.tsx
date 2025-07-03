@@ -45,7 +45,7 @@ const ShippingLogistics = (props: Props) => {
               height={130}
               src={GlobeIcon}
               alt=""
-              className="w-24 md:w-auto"
+              className="w-24 md:w-[150px]"
             />
           </motion.div>
           <p>Fast delivery to over 20 countries</p>
@@ -60,7 +60,7 @@ const ShippingLogistics = (props: Props) => {
               height={130}
               src={BoxIcon}
               alt=""
-              className="w-24 md:w-auto"
+              className="w-24 md:w-[150px]"
             />
           </motion.div>
           <p>Customized packaging with private labeling</p>
@@ -75,7 +75,7 @@ const ShippingLogistics = (props: Props) => {
               height={130}
               src={ShippingIcon}
               alt=""
-              className="w-24 md:w-auto"
+              className="w-24 md:w-[150px]"
             />
           </motion.div>
           <p>Delivery time: 5 to 14 business days</p>
@@ -90,7 +90,7 @@ const ShippingLogistics = (props: Props) => {
               height={130}
               src={DocumentIcon}
               alt=""
-              className="w-24 md:w-auto"
+              className="w-24 md:w-[150px]"
             />
           </motion.div>
           <p>Full shipping documentation (invoices, certificates of origin)</p>
@@ -123,7 +123,7 @@ const ShippingLogistics = (props: Props) => {
             src={DhlLogo}
             width={195}
             height={195}
-            className="w-auto"
+            className="w-[340px]"
           />
         </motion.div>
         <motion.div
@@ -138,7 +138,7 @@ const ShippingLogistics = (props: Props) => {
             src={FedexLogo}
             width={195}
             height={195}
-            className="w-auto"
+            className="w-[340px]"
           />
         </motion.div>
         <motion.div
@@ -153,7 +153,7 @@ const ShippingLogistics = (props: Props) => {
             src={AramexLogo}
             width={195}
             height={195}
-            className="w-auto"
+            className="w-[340px]"
           />
         </motion.div>
         <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl lg:col-span-3 justify-self-center">
