@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "@heroui/react": "^2.7.11",
     "@nextui-org/react": "^2.6.11",
     "@splidejs/react-splide": "^0.7.12",
     "antd": "^5.26.2",
+    "motion": "^12.22.0",
     "next": "13.5.11",
     "react": "^18",
     "react-dom": "^18"
