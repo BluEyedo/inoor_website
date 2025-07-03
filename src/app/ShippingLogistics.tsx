@@ -13,7 +13,7 @@ type Props = {};
 
 const ShippingLogistics = (props: Props) => {
   return (
-    <div className="pb-8 md:pb-16">
+    <div className="pb-8 md:pb-16 px-4">
       <motion.div
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
