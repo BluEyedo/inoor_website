@@ -37,7 +37,7 @@ const Header = (props: Props) => {
               className={`whitespace-nowrap overflow-hidden text-ellipsis text-xl lg:text-base ${
                 path == "/main/" ? "text-gold-700" : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href="//main/"
+              href="/inoor_website/main/"
             >
               Home
             </Link>
@@ -46,7 +46,7 @@ const Header = (props: Props) => {
               className={`text-xl lg:text-base ${
                 path == "/main/about-us" ? "text-gold-700" : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href="/about-us"
+              href="/inoor_website/about-us"
             >
               About Us
             </Link>
@@ -55,7 +55,7 @@ const Header = (props: Props) => {
               className={`text-xl lg:text-base ${
                 path == "/main/our-products" ? "text-gold-700" : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href="/our-products"
+              href="/inoor_website/our-products"
             >
               Our products
             </Link>
@@ -66,7 +66,7 @@ const Header = (props: Props) => {
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href="/shipping-logistics"
+              href="/inoor_website/shipping-logistics"
             >
               Shipping and logistics
             </Link>
@@ -75,7 +75,7 @@ const Header = (props: Props) => {
               className={`text-xl lg:text-base ${
                 path == "/main/distributors" ? "text-gold-700" : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href="/distributors"
+              href="/inoor_website/distributors"
             >
               Become a Distributor (B2B)
             </Link>
@@ -84,7 +84,7 @@ const Header = (props: Props) => {
               className={`text-xl lg:text-base ${
                 path == "/main/contact-us" ? "text-gold-700" : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href="/contact-us"
+              href="/inoor_website/contact-us"
             >
               Contact us
             </Link>
@@ -120,7 +120,7 @@ const Header = (props: Props) => {
               className={`whitespace-nowrap overflow-hidden text-ellipsis text-xs lg:text-base ${
                 path == "/main" ? "text-gold-700" : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href="/main"
+              href="/inoor_website/main"
             >
               Home
             </Link>
@@ -130,7 +130,7 @@ const Header = (props: Props) => {
               className={`text-xs lg:text-base ${
                 path == "/main/about-us" ? "text-gold-700" : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href="/main/about-us"
+              href="/inoor_website/main/about-us"
             >
               About Us
             </Link>
@@ -140,7 +140,7 @@ const Header = (props: Props) => {
               className={`text-xs lg:text-base ${
                 path == "/main/our-products" ? "text-gold-700" : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href="/main/our-products"
+              href="/inoor_website/main/our-products"
             >
               Our products
             </Link>
@@ -152,7 +152,7 @@ const Header = (props: Props) => {
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href="/main/shipping-logistics"
+              href="/inoor_website/main/shipping-logistics"
             >
               Shipping and logistics
             </Link>
@@ -162,7 +162,7 @@ const Header = (props: Props) => {
               className={`text-xs lg:text-base ${
                 path == "/main/distributors" ? "text-gold-700" : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href="/main/distributors"
+              href="/inoor_website/main/distributors"
             >
               Become a Distributor (B2B)
             </Link>
@@ -172,7 +172,7 @@ const Header = (props: Props) => {
               className={`text-xs lg:text-base ${
                 path == "/main/contact-us" ? "text-gold-700" : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href="/main/contact-us"
+              href="/inoor_website/main/contact-us"
             >
               Contact us
             </Link>
