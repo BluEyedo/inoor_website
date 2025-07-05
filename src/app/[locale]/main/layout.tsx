@@ -22,10 +22,8 @@ export default function RootLayout({
 }) {
   return (
     <div className={`${ptSerif.className}`}>
-      <ReduxToolkitProvider>
-        <Header />
-        {children}
-      </ReduxToolkitProvider>
+      <Header />
+      {children}
     </div>
   );
 }

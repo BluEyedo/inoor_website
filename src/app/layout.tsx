@@ -15,19 +15,15 @@ export const metadata: Metadata = {
   title: "INOOR International",
   description: "",
 };
-export default function LocaleLayout({
+
+export default function RootLayout({
   children,
-  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
 }) {
   return (
-    <html lang={params.locale} dir={params.locale === "ar" ? "rtl" : "ltr"}>
-      <body className={`${ptSerif.className}`}>
-        <Header />
-        {children}
-      </body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
   );
 }
