@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import AboutUs from "../AboutUs";
+import AboutUs from "../../../../components/AboutUs";
 
 type Props = {};
 

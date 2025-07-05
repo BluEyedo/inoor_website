@@ -1,13 +1,13 @@
 "use client";
-import AboutUs from "@/app/[locale]/main/AboutUs";
+import AboutUs from "@/components/AboutUs";
 import Hero from "@/components/Hero";
-import ProductSlider from "@/app/[locale]/main/ProductSlider";
+import ProductSlider from "@/components/ProductSlider";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-import ShippingLogistics from "./ShippingLogistics";
-import Ditributors from "./Ditributors";
-import ContactUs from "./ContactUs";
+import ShippingLogistics from "../../../components/ShippingLogistics";
+import Ditributors from "../../../components/Ditributors";
+import ContactUs from "../../../components/ContactUs";
 
 export default function MainPage() {
   return (

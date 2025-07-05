@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Ditributors from "../Ditributors";
+import Ditributors from "../../../../components/Ditributors";
 
 type Props = {};
 
