@@ -22,6 +22,7 @@ const Header = (props: Props) => {
     setOpen(false);
   }, [path]);
 
+
   return (
     <>
       {open && (

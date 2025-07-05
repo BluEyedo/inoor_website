@@ -9,7 +9,7 @@ import ShippingLogistics from "./ShippingLogistics";
 import Ditributors from "./Ditributors";
 import ContactUs from "./ContactUs";
 
-export default function Home() {
+export default function MainPage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between ">
       <Hero />

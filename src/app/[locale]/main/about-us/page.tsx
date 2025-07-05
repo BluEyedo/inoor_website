@@ -4,7 +4,7 @@ import AboutUs from "../AboutUs";
 
 type Props = {};
 
-const page = (props: Props) => {
+const AboutUsPage = (props: Props) => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between mt-16">
       <div
@@ -21,4 +21,4 @@ const page = (props: Props) => {
   );
 };
 
-export default page;
+export default AboutUsPage;

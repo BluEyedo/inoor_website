@@ -3,7 +3,7 @@ import ProductSlider from "../ProductSlider";
 
 type Props = {};
 
-const page = (props: Props) => {
+const OurProductPage = (props: Props) => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <div
@@ -21,4 +21,4 @@ const page = (props: Props) => {
   );
 };
 
-export default page;
+export default OurProductPage;
