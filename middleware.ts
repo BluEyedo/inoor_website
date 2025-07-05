@@ -1,31 +1,25 @@
 // middleware.ts
 import { NextRequest, NextResponse } from 'next/server';
 
-const PUBLIC_FILE = /\.(.*)$/;
 const locales = ['en', 'ar', 'th'];
 const defaultLocale = 'en';
 
-export function middleware(req: NextRequest) {
-  const { pathname } = req.nextUrl;
+export function middleware(request: NextRequest) {
+  const pathname = request.nextUrl.pathname;
 
-  // Skip static files
-  if (
-    pathname.startsWith('/_next') ||
-    pathname.startsWith('/api') ||
-    PUBLIC_FILE.test(pathname)
-  ) {
-    return NextResponse.next();
-  }
-
-  // If path already includes a locale, do nothing
-  const pathnameIsMissingLocale = locales.every(
-    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+  const hasLocale = locales.some(
+    (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
   );
 
-  if (pathnameIsMissingLocale) {
-    const locale = defaultLocale; // you could add detection here
-    return NextResponse.redirect(new URL(`/${locale}${pathname}`, req.url));
+  if (!hasLocale) {
+    const url = request.nextUrl.clone();
+    url.pathname = `/${defaultLocale}${pathname}`;
+    return NextResponse.redirect(url);
   }
 
   return NextResponse.next();
 }
+
+export const config = {
+  matcher: ['/((?!_next|api|static|favicon.ico).*)'],
+};
