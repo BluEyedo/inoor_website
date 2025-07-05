@@ -7,18 +7,13 @@ import food from "@/../public/inoor-food.png";
 import care from "@/../public/inoor-care.png";
 import Image from "next/image";
 import { motion } from "motion/react";
+import { useParams } from "next/navigation";
 
 // TypeScript interfaces
-interface SlideData {
-  title: string;
-  src: any;
-  bgColor: string;
-  features: string[];
-}
 
 interface ProductSliderProps {
   onSlideChanged?: (splide: any, newIndex: number) => void;
-  onSlideClicked?: (slide: SlideData, index: number) => void;
+  onSlideClicked?: (slide: any, index: number) => void;
 }
 
 const ProductSlider: React.FC<ProductSliderProps> = ({
@@ -27,9 +22,10 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
 }) => {
   const splideRef = useRef<any>(null);
 
-  const slides: SlideData[] = [
+  const slides = [
     {
       title: "Beauty Products",
+      titleAr: "مستحضرات التجميل",
       src: care,
       bgColor: "bg-gradient-to-br from-gold-100 to-rose-100",
       features: [
@@ -38,12 +34,20 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
         "Natural makeup",
         "Cruelty-free certified products",
       ],
+      featuresAr: [
+        "كريمات العناية بالبشرة",
+        "أمصال وسيرومات",
+        "مستحضرات التجميل",
+        "منتجات خالية من القسوة",
+      ],
     },
     {
       title: "Food & Nutrition",
+      titleAr: "المنتجات الغذائية",
       src: food,
       bgColor: "bg-gradient-to-br from-rose-100 to-gold-100",
       features: ["Healthy snacks supplements", "Beauty-enhancing drinks"],
+      featuresAr: ["أغذية صحية ومكمّلات نباتية", "مشروبات جمالي وطبيعية"],
     },
   ];
 
@@ -96,7 +100,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
     onSlideChanged?.(splide, newIndex);
   };
 
-  const handleSlideClick = (slide: SlideData, index: number) => {
+  const handleSlideClick = (slide: any, index: number) => {
     onSlideClicked?.(slide, index);
   };
 
@@ -130,6 +134,8 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
     pause,
   }));
 
+  const { locale } = useParams();
+
   return (
     <div className="splide-container h-auto min-h-[500px] sm:min-h-[600px] lg:h-[700px] py-8 sm:py-12 mb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -141,7 +147,10 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
         >
           <div className="flex flex-row ">
             <div className="sm:w-[35%] border-b-2 border-charcoal-500" />
-            <p className="sm:w-[30%]">Our Products</p>
+            <p className="sm:w-[30%]">
+              {locale == "en" && "Our Products"}
+              {locale == "ar" && "منتجاتنا"}
+            </p>
             <div className="sm:w-[35%] border-b-2 border-charcoal-500" />
           </div>
         </motion.div>
@@ -209,17 +218,34 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
 
                   {/* Content Area */}
                   <div className="p-4 md:p-5 lg:p-6 text-charcoal-500">
-                    <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-3 border-b-2 border-b-gold-300 pb-2">
-                      {slide.title}
+                    <h3
+                      className={`text-lg md:text-xl lg:text-2xl font-bold mb-3 border-b-2 border-b-gold-300 pb-2 ${
+                        locale == "ar" && "text-end"
+                      }`}
+                    >
+                      {locale == "en" && slide.title}
+                      {locale == "ar" && slide.titleAr}
                     </h3>
 
                     {/* Features List */}
                     <ul className="mt-4 space-y-1 text-sm md:text-base">
-                      {slide.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="opacity-80">
-                          • {feature}
-                        </li>
-                      ))}
+                      {locale == "en" &&
+                        slide.features.map((feature, featureIndex) => (
+                          <li key={featureIndex} className="opacity-80">
+                            • {feature}
+                          </li>
+                        ))}
+                      {locale == "ar" &&
+                        slide.featuresAr.map((feature, featureIndex) => (
+                          <div dir="rtl" key={featureIndex}>
+                            <li
+                              
+                              className="opacity-80 text-right"
+                            >
+                              • {feature}
+                            </li>
+                          </div>
+                        ))}
                     </ul>
                   </div>
                 </div>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import * as motion from "motion/react-client";
 import { Divider } from "antd";
+import { useParams } from "next/navigation";
 
 type Props = {};
 
@@ -32,39 +33,51 @@ const ContactUs = (props: Props) => {
     {
       icon: "📧",
       label: "Email",
+      labelAr: "الإيميل",
       value: "hello@inoor.com",
+      valueAr: null,
       href: "mailto:hello@inoor.com",
       delay: 0.2,
     },
     {
       icon: "📱",
       label: "WhatsApp",
+      labelAr: "واتساب",
       value: "+66 XXX XXX XXX",
+      valueAr: null,
       href: "https://wa.me/66XXXXXXXXX",
       delay: 0.3,
     },
     {
       icon: "🌐",
       label: "Website",
+      labelAr: "الرابط الإلكتروني",
       value: "www.inoor.com",
+      valueAr: null,
       href: "https://www.inoor.com",
       delay: 0.4,
     },
     {
       icon: "📍",
       label: "Locations",
+      labelAr: "المواقع",
       value: "Bangkok, Thailand – Dubai, UAE",
+      valueAr: "بانكوك، تايلند - دبي، الإمارات العربية المتحدة",
       href: null,
       delay: 0.5,
     },
     {
       icon: "📸",
       label: "Instagram",
+      labelAr: "إنستاقرام",
       value: "@inoor_beauty",
+      valueAr: null,
       href: "https://instagram.com/inoor_beauty",
       delay: 0.6,
     },
   ];
+
+  const { locale } = useParams();
 
   return (
     <>
@@ -76,7 +89,10 @@ const ContactUs = (props: Props) => {
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4 md:mb-6 text-charcoal-500 flex flex-row justify-center"
         >
           <div className="sm:w-[35%] border-b-2 border-charcoal-500" />
-          <p className="sm:w-[30%] text-center">Contact Us</p>
+          <p className="sm:w-[30%] text-center">
+            {locale == "en" && "Contact Us"}
+            {locale == "ar" && "تواصل معنا"}
+          </p>
           <div className="sm:w-[35%] border-b-2 border-charcoal-500" />
         </motion.div>
 
@@ -87,7 +103,8 @@ const ContactUs = (props: Props) => {
           viewport={{ once: true }}
           className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-center px-2"
         >
-          Get in Touch
+          {locale == "en" && "Get in Touch"}
+          {locale == "ar" && "لنكن على تواصل"}
         </motion.div>
       </div>
 
@@ -121,20 +138,24 @@ const ContactUs = (props: Props) => {
                     {method.icon}
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold mb-2 text-charcoal-500">
-                    {method.label}
+                    {locale == "en" && method.label}
+                    {locale == "ar" && method.labelAr}
                   </h3>
                   <p className="text-lg sm:text-xl text-gray-600 group-hover:text-blue-600 transition-colors">
-                    {method.value}
+                    {locale == "en" && method.value}
+                    {(locale == "ar" && method.valueAr) ?? method.value}
                   </p>
                 </a>
               ) : (
                 <div className="text-center">
                   <div className="text-4xl sm:text-5xl mb-4">{method.icon}</div>
                   <h3 className="text-xl sm:text-2xl font-bold mb-2 text-charcoal-500">
-                    {method.label}
+                    {locale == "en" && method.label}
+                    {locale == "ar" && method.labelAr}
                   </h3>
                   <p className="text-lg sm:text-xl text-gray-600">
-                    {method.value}
+                    {locale == "en" && method.value}
+                    {locale == "ar" && <>{method.valueAr ?? method.value}</>}
                   </p>
                 </div>
               )}
@@ -150,11 +171,12 @@ const ContactUs = (props: Props) => {
         <motion.div
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.2 }}
           viewport={{ once: true }}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-8 md:mb-12 text-charcoal-500"
         >
-          Send us a Message
+          {locale == "en" && "Send us a Message"}
+          {locale == "ar" && "ارسل رسالة"}
         </motion.div>
 
         <motion.form
@@ -176,7 +198,8 @@ const ContactUs = (props: Props) => {
                 htmlFor="name"
                 className="block text-lg sm:text-xl font-semibold text-charcoal-500 mb-2"
               >
-                📝 Name
+                {locale == "en" && "📝 Name"}
+                {locale == "ar" && "📝 الإسم"}
               </label>
               <input
                 type="text"
@@ -186,21 +209,22 @@ const ContactUs = (props: Props) => {
                 onChange={handleInputChange}
                 required
                 className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-lg"
-                placeholder="Your full name"
+                placeholder={locale == "en" ? "Your full name" : "أدخل الإسم"}
               />
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5 }}
+              transition={{ delay: 0.4 }}
               viewport={{ once: true }}
             >
               <label
                 htmlFor="email"
                 className="block text-lg sm:text-xl font-semibold text-charcoal-500 mb-2"
               >
-                📧 Email
+                {locale == "en" && "📧 Email"}
+                {locale == "ar" && "📧 الإيميل"}
               </label>
               <input
                 type="email"
@@ -210,21 +234,22 @@ const ContactUs = (props: Props) => {
                 onChange={handleInputChange}
                 required
                 className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-lg"
-                placeholder="your.email@example.com"
+                placeholder={"your.email@example.com"}
               />
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.6 }}
+              transition={{ delay: 0.4 }}
               viewport={{ once: true }}
             >
               <label
                 htmlFor="message"
                 className="block text-lg sm:text-xl font-semibold text-charcoal-500 mb-2"
               >
-                💬 Message
+                {locale == "en" && "💬 Message"}
+                {locale == "ar" && "💬 رسالة"}
               </label>
               <textarea
                 id="message"
@@ -234,14 +259,18 @@ const ContactUs = (props: Props) => {
                 required
                 rows={6}
                 className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-lg resize-vertical"
-                placeholder="Tell us how we can help you..."
+                placeholder={
+                  locale == "en"
+                    ? "Tell us how we can help you..."
+                    : "أخبرنا كيف نخدمك ..."
+                }
               />
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7 }}
+              transition={{ delay: 0.4 }}
               viewport={{ once: true }}
               className="text-center"
             >
@@ -249,7 +278,8 @@ const ContactUs = (props: Props) => {
                 type="submit"
                 className="bg-gradient-to-tr from-gold-700 to-gold-500 text-white font-bold py-4 px-8 rounded-lg text-lg sm:text-xl hover:to-gold-700 hover:from-gold-900 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
-                Send Message ✨
+                {locale == "en" && "Send Message ✨"}
+                {locale == "ar" && "ارسال ✨"}
               </button>
             </motion.div>
           </div>
@@ -258,11 +288,10 @@ const ContactUs = (props: Props) => {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
+          transition={{ delay: 0.4 }}
           viewport={{ once: true }}
           className="text-center mt-8 text-gray-600"
         >
-          <p className="text-lg">{`We'll get back to you within 24 hours! 🚀`}</p>
         </motion.div>
       </div>
     </>

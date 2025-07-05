@@ -5,6 +5,7 @@ import banner from "@/../public/banner.png";
 import banner2 from "@/../public/banner2.png";
 import Image from "next/image";
 import { motion } from "motion/react";
+import { useParams } from "next/navigation";
 
 type Props = {};
 
@@ -22,6 +23,8 @@ const Hero = (props: Props) => {
     speed: 600,
   };
 
+  const { locale } = useParams();
+
   return (
     <div className="w-full mt-16 h-[467px]">
       <Splide options={splideOptions}>
@@ -38,13 +41,14 @@ const Hero = (props: Props) => {
               INOOR
             </motion.p>
             <motion.p
-             initial={{ opacity: 0, y: -30 }}
-             whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: -30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
               viewport={{ once: true }}
-              className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
+              className={`text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl ${locale && "mt-3"}`}
             >
-              Quality Begins at the Source
+              {locale == "en" && "Quality Begins at the Source"}
+              {locale == "ar" && "الجودة تبدأ من المصدر"}
             </motion.p>
           </div>
           <Image
@@ -53,7 +57,7 @@ const Hero = (props: Props) => {
             alt=""
           />
         </SplideSlide>
-        <SplideSlide key={1}>
+        <SplideSlide key={2}>
           <div className="bg-gradient-to-r from-white/0 to-black/90 absolute w-full h-[467px] z-20 " />
           <Image
             className=" h-[467px] w-full bg-black/70 text-white object-cover aspect-[1920/467]"

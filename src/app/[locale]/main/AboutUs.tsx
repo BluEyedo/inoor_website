@@ -8,18 +8,22 @@ import ValuesIcon from "@/../public/icons/values.png";
 import MissionIcon from "@/../public/icons/mission.png";
 import * as motion from "motion/react-client";
 import { Divider } from "antd";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "next/navigation";
 
 type Props = {};
 const valuesArray = [
-  "Professionalism",
-  "Transparency",
-  "Quality",
-  "Flexibility",
-  "Cultural",
-  "Respect",
+  { ar: "الإحتراف", en: "Professionalism" },
+  { ar: "الشفافية", en: "Transparency" },
+  { ar: "الجودة", en: "Quality" },
+  { ar: "المرونة", en: "Flexibility" },
+  { ar: "الثقافة", en: "Cultural" },
+  { ar: "الإحترام", en: "Respect" },
 ];
 
 const AboutUs = (props: Props) => {
+  const { locale } = useParams();
+
   return (
     <>
       <div className="flex flex-col pb-8 md:pb-16 justify-between px-4">
@@ -30,7 +34,10 @@ const AboutUs = (props: Props) => {
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4 md:mb-6 text-charcoal-500 flex flex-row justify-center"
         >
           <div className="sm:w-[35%] border-b-2 border-charcoal-500" />
-          <p className="sm:w-[30%] text-center">Who are We?</p>
+          <p className="sm:w-[30%] text-center">
+            {locale == "en" && "Who are We"}
+            {locale == "ar" && "من نحن؟"}
+          </p>
           <div className="sm:w-[35%] border-b-2 border-charcoal-500" />
         </motion.div>
         <motion.div
@@ -40,7 +47,9 @@ const AboutUs = (props: Props) => {
           viewport={{ once: true }}
           className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-center px-2"
         >
-          INOOR is a global brand built on the values of:
+          {locale == "en" &&
+            "INOOR is a global brand built on the values of INOOR "}
+          {locale == "ar" && "هي علامة تجارية عالمية أسست على القيم التالية :"}
         </motion.div>
 
         <div className="mt-4 gap-8 sm:gap-16 md:gap-32 lg:gap-64 flex flex-col sm:flex-row text-lg md:text-xl items-center justify-center">
@@ -66,7 +75,8 @@ const AboutUs = (props: Props) => {
                 className="sm:w-[150px] sm:h-[150px]"
               />
               <p className="text-center text-xl sm:text-2xl md:text-3xl">
-                Beauty
+                {locale == "en" && "Beauty"}
+                {locale == "ar" && "الجمال"}
               </p>
             </motion.div>
           </div>
@@ -92,7 +102,8 @@ const AboutUs = (props: Props) => {
                 className="sm:w-[150px] sm:h-[150px]"
               />
               <p className="text-center text-xl sm:text-2xl md:text-3xl">
-                Health
+                {locale == "en" && "Health"}
+                {locale == "ar" && "الصحة"}
               </p>
             </motion.div>
           </div>
@@ -118,7 +129,8 @@ const AboutUs = (props: Props) => {
                 className="sm:w-[150px] sm:h-[150px]"
               />
               <p className="text-center text-xl sm:text-2xl md:text-3xl">
-                Quality
+                {locale == "en" && "Quality"}
+                {locale == "ar" && "الجودة"}
               </p>
             </motion.div>
           </div>
@@ -133,8 +145,16 @@ const AboutUs = (props: Props) => {
           viewport={{ once: true }}
           className="text-lg sm:text-xl md:text-2xl lg:text-3xl lg:col-span-3 text-center lg:text-left"
         >
-          To become the first choice for beauty and wellness distributors across
-          Asia and the Middle East.
+          {locale == "en" &&
+            `To become the first choice for beauty and wellness distributors across
+          Asia and the Middle East.`}
+
+          {locale == "ar" && (
+            <div dir="rtl" className="text-right">
+              أن نكون الخيار الأول لشركاء التجميل والتغذية في آسيا والشرق
+              الأوسط.
+            </div>
+          )}
         </motion.div>
 
         <motion.div
@@ -161,7 +181,8 @@ const AboutUs = (props: Props) => {
             />
           </motion.div>
           <h2 className="text-center mb-6 md:mb-12 text-charcoal-500">
-            Our Vision
+            {locale == "en" && "Our Vision"}
+            {locale == "ar" && "رؤيتنا"}
           </h2>
         </motion.div>
       </div>
@@ -182,7 +203,8 @@ const AboutUs = (props: Props) => {
             className="sm:w-[150px] sm:h-[150px]"
           />
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-6 md:mb-12 text-charcoal-500">
-            Our Mission
+            {locale == "en" && "Our Mission"}
+            {locale == "ar" && "مهمتنا"}
           </h2>
         </motion.div>
 
@@ -193,8 +215,16 @@ const AboutUs = (props: Props) => {
           viewport={{ once: true }}
           className="text-lg  sm:block sm:text-xl md:text-2xl lg:text-3xl lg:col-span-3 text-center lg:text-left order-1 lg:order-2"
         >
-          To deliver effective products and professional logistics that ensure a
-          seamless, high-end experience.
+          {locale == "en" &&
+            `To deliver effective products and professional logistics that ensure a
+          seamless, high-end experience.`}
+
+          {locale == "ar" && (
+            <div dir="rtl" className="text-right">
+              توفير منتجات فعالة وشحن احترافي لبناء تجربة راقية للعملاء
+              والموزعين.
+            </div>
+          )}
         </motion.div>
       </div>
       <Divider style={{ border: "1px solid" }} />
@@ -207,7 +237,7 @@ const AboutUs = (props: Props) => {
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold flex flex-col sm:flex-row items-center"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center text-charcoal-500 mb-4 sm:mb-0">
-            Our Values
+            {locale == "en" && `Our Values`}
           </h2>
           <motion.div
             whileInView={{ scale: 1, y: [12, 0, 12] }}
@@ -238,7 +268,9 @@ const AboutUs = (props: Props) => {
               key={ix}
               className="text-center sm:text-left items-center flex-row sm:flex-col xl:flex-row flex gap-3"
             >
-              <span className="text-green-600 font-bold "> ✔</span> {txt}
+              <span className="text-green-600 font-bold "> ✔</span>
+              {locale == "en" && txt.en}
+              {locale == "ar" && txt.ar}
             </motion.div>
           ))}
         </div>

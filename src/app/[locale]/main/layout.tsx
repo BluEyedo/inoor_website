@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat, PT_Serif } from "next/font/google";
-import "../globals.css";
+import "../../globals.css";
 import Header from "@/components/Header";
-import { NextUIProvider } from "@nextui-org/react";
+import { ReduxToolkitProvider } from "../../providers";
 
-const inter = Inter({ subsets: ["latin"] });
-const montserrat = Montserrat({ subsets: ["cyrillic"] });
 const ptSerif = PT_Serif({
   subsets: ["cyrillic"],
   weight: "400",
@@ -14,6 +12,7 @@ const ptSerif = PT_Serif({
 export const metadata: Metadata = {
   title: "INOOR International",
   description: "",
+  icons: "",
 };
 
 export default function RootLayout({
@@ -22,13 +21,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body
-        className={`${ptSerif.className} bg-gradient-to-t from-rose-100 to-white`}
-      >
+    <div className={`${ptSerif.className}`}>
+      <ReduxToolkitProvider>
         <Header />
         {children}
-      </body>
-    </html>
+      </ReduxToolkitProvider>
+    </div>
   );
 }

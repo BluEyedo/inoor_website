@@ -1,7 +1,7 @@
 "use client";
-import AboutUs from "@/app/main/AboutUs";
-import Hero from "@/app/main/Hero";
-import ProductSlider from "@/app/main/ProductSlider";
+import AboutUs from "@/app/[locale]/main/AboutUs";
+import Hero from "@/components/Hero";
+import ProductSlider from "@/app/[locale]/main/ProductSlider";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
