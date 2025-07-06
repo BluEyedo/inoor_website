@@ -2,9 +2,13 @@
 import React from "react";
 import Ditributors from "../../../../components/Ditributors";
 
-type Props = {};
+type Props = { params: { locale: string } };
 
-const DistributorsPage = (props: Props) => {
+export function generateStaticParams() {
+  return [{ locale: "en" }, { locale: "ar" }];
+}
+
+const DistributorsPage = ({ params }: Props) => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between mt-16">
       <div

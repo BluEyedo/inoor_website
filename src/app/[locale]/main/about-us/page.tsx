@@ -1,10 +1,14 @@
-"use client"
+"use client";
 import React from "react";
 import AboutUs from "../../../../components/AboutUs";
 
-type Props = {};
+type Props = { params: { locale: string } };
 
-const AboutUsPage = (props: Props) => {
+export function generateStaticParams() {
+  return [{ locale: "en" }, { locale: "ar" }];
+}
+
+const AboutUsPage = ({ params }: Props) => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between mt-16">
       <div

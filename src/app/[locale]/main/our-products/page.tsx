@@ -1,9 +1,13 @@
 import React from "react";
 import ProductSlider from "../../../../components/ProductSlider";
 
-type Props = {};
+type Props = { params: { locale: string } };
 
-const OurProductPage = (props: Props) => {
+export function generateStaticParams() {
+  return [{ locale: "en" }, { locale: "ar" }];
+}
+
+const OurProductPage = ({ params }: Props) => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <div

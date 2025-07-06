@@ -3,10 +3,13 @@ import { motion } from "motion/react";
 import React from "react";
 import ShippingLogistics from "../../../../components/ShippingLogistics";
 
+type Props = { params: { locale: string } };
 
-type Props = {};
+export function generateStaticParams() {
+  return [{ locale: "en" }, { locale: "ar" }];
+}
 
-const ShippingLogisticsPage = (props: Props) => {
+const ShippingLogisticsPage = ({ params }: Props) => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between mt-16">
       <div
