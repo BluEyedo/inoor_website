@@ -23,11 +23,8 @@ const Header = (props: Props) => {
     setOpen(false);
   }, [path]);
 
-
-  
-
   return (
-    <>
+    <div>
       {open && (
         <div className="bg-white fixed lg:hidden left-0 top-0 w-[100%] h-[100%] z-20">
           <motion.button
@@ -220,7 +217,7 @@ const Header = (props: Props) => {
         </NavbarContent>
       </Navbar>
 
-      <div className="flex flex-row items-center text-xs  fixed sm:top-1 top-0 sm:right-1 right-5 gap-3 z-30">
+      <div className="flex flex-row items-center text-xs fixed top-0 sm:right-3 right-[40vw] gap-5 sm:gap-3 z-30">
         <motion.button
           className={`${lang == "en" ? "text-gold-900" : ""}`}
           whileHover={{ scale: 1.1 }}
@@ -251,7 +248,7 @@ const Header = (props: Props) => {
           AR
         </motion.button>
       </div>
-    </>
+    </div>
   );
 };
 
