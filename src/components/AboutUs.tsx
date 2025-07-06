@@ -238,6 +238,7 @@ const AboutUs = (props: Props) => {
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center text-charcoal-500 mb-4 sm:mb-0">
             {lang == "en" && `Our Values`}
+            {lang == "ar" && `قيمنا`}
           </h2>
           <motion.div
             whileInView={{ scale: 1, y: [12, 0, 12] }}
