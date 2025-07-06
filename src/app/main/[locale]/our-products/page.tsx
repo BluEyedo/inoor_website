@@ -1,10 +1,9 @@
 import React from "react";
 import ProductSlider from "../../../../components/ProductSlider";
 
-type Props = { params: { locale: string } };
+type Props = {};
 
-
-const OurProductPage = ({ params }: Props) => {
+const OurProductPage = (Props: Props) => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <div

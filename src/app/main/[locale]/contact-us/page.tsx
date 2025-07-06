@@ -2,10 +2,9 @@
 import React from "react";
 import ContactUs from "../../../../components/ContactUs";
 
-type Props = { params: { locale: string } };
+type Props = {};
 
-
-const ContactUsPage = ({ params }: Props) => {
+const ContactUsPage = (Props: Props) => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between mt-16">
       <div

@@ -2,9 +2,9 @@
 import React from "react";
 import AboutUs from "../../../../components/AboutUs";
 
-type Props = { params: { locale: string } };
+type Props = {};
 
-const AboutUsPage = ({ params }: Props) => {
+const AboutUsPage = (Props: Props) => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between mt-16">
       <div
