@@ -135,7 +135,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
     pause,
   }));
 
-  const  lang  = useSelector((state: any) => state.lang.value);
+  const lang = useSelector((state: any) => state.lang.value);
 
   return (
     <div className="splide-container h-auto min-h-[500px] sm:min-h-[600px] lg:h-[700px] py-8 sm:py-12 mb-12">
@@ -177,16 +177,25 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
                 {/* Content Area */}
                 <div className="p-4 sm:p-6 text-charcoal-500">
                   <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 border-b-2 border-b-gold-300 pb-2">
-                    {slide.title}
+                    {lang == "en" && slide.title}
+                    {lang == "ar" && slide.titleAr}
                   </h3>
 
                   {/* Features List */}
                   <ul className="mt-4 space-y-1 text-sm sm:text-base">
-                    {slide.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="opacity-80">
-                        • {feature}
-                      </li>
-                    ))}
+                    {lang == "en" &&
+                      slide.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="opacity-80">
+                          • {feature}
+                        </li>
+                      ))}
+
+                    {lang == "ar" &&
+                      slide.featuresAr.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="opacity-80">
+                          • {feature}
+                        </li>
+                      ))}
                   </ul>
                 </div>
               </div>
@@ -239,10 +248,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
                       {lang == "ar" &&
                         slide.featuresAr.map((feature, featureIndex) => (
                           <div dir="rtl" key={featureIndex}>
-                            <li
-                              
-                              className="opacity-80 text-right"
-                            >
+                            <li className="opacity-80 text-right">
                               • {feature}
                             </li>
                           </div>
