@@ -40,11 +40,11 @@ const Header = (props: Props) => {
           <div className="flex flex-col pl-5 pt-16 gap-8">
             <Link
               className={`whitespace-nowrap overflow-hidden text-ellipsis text-xl lg:text-base ${
-                path.split("/").pop() == "main"
+                path.split("/").length == 3
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href={`${url}/${locale}/main`}
+              href={`${url}/main/${locale}`}
             >
               {locale == "en" && "Home"}
               {locale == "ar" && "الرئيسية"}
@@ -56,7 +56,7 @@ const Header = (props: Props) => {
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href={`${url}/${locale}/main/about-us`}
+              href={`${url}/main/${locale}/about-us`}
             >
               {locale == "en" && "About Us"}
               {locale == "ar" && "من نحن"}
@@ -68,7 +68,7 @@ const Header = (props: Props) => {
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href={`${url}/${locale}/main/our-products`}
+              href={`${url}/main/${locale}/our-products`}
             >
               {locale == "en" && "Our products"}
               {locale == "ar" && "منتجاتنا"}
@@ -80,7 +80,7 @@ const Header = (props: Props) => {
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href={`${url}/${locale}/main/shipping-logistics`}
+              href={`${url}/main/${locale}/shipping-logistics`}
             >
               {locale == "en" && "Shipping and logistics"}
               {locale == "ar" && "الشحن والتوزيع"}
@@ -92,7 +92,7 @@ const Header = (props: Props) => {
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href={`${url}/${locale}/main/distributors`}
+              href={`${url}/main/${locale}/distributors`}
             >
               {locale == "en" && "Be a Distributor (B2B)"}
               {locale == "ar" && "كن موزعًا معنا"}
@@ -104,7 +104,7 @@ const Header = (props: Props) => {
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href={`${url}/${locale}/main/contact-us`}
+              href={`${url}/main/${locale}/contact-us`}
             >
               {locale == "en" && "Contact us"}
               {locale == "ar" && "تواصل معنا"}
@@ -139,11 +139,11 @@ const Header = (props: Props) => {
           <NavbarItem>
             <Link
               className={`whitespace-nowrap overflow-hidden text-ellipsis text-xs lg:text-base ${
-                path.split("/").pop() == "/main"
+                path.split("/").length == 3
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href={`${url}/${locale}/main`}
+              href={`${url}/main/${locale}`}
             >
               {locale == "en" && "Home"}
               {locale == "ar" && "الرئيسية"}
@@ -156,7 +156,7 @@ const Header = (props: Props) => {
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href={`${url}/${locale}/main/about-us`}
+              href={`${url}/main/${locale}/about-us`}
             >
               {locale == "en" && "About Us"}
               {locale == "ar" && "من نحن"}
@@ -169,7 +169,7 @@ const Header = (props: Props) => {
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href={`${url}/${locale}/main/our-products`}
+              href={`${url}/main/${locale}/our-products`}
             >
               {locale == "en" && "Our products"}
               {locale == "ar" && "منتجاتنا"}
@@ -182,7 +182,7 @@ const Header = (props: Props) => {
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href={`${url}/${locale}/main/shipping-logistics`}
+              href={`${url}/main/${locale}/shipping-logistics`}
             >
               {locale == "en" && "Shipping and logistics"}
               {locale == "ar" && "الشحن والتغليف"}
@@ -195,7 +195,7 @@ const Header = (props: Props) => {
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href={`${url}/${locale}/main/distributors`}
+              href={`${url}/main/${locale}/distributors`}
             >
               {locale == "en" && "Be a Distributor (B2B)"}
               {locale == "ar" && "كن موزعًا معنا"}
@@ -208,7 +208,7 @@ const Header = (props: Props) => {
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href={`${url}/${locale}/main/contact-us`}
+              href={`${url}/main/${locale}/contact-us`}
             >
               {locale == "en" && "Contact us"}
               {locale == "ar" && "تواصل معنا"}
@@ -224,7 +224,7 @@ const Header = (props: Props) => {
           whileTap={{ scale: 1.3 }}
           onClick={() => {
             const segments = path.split("/");
-            segments[1] = `en`;
+            segments[2] = `en`;
             const newPath = segments.join("/");
             router.replace(`${newPath}`);
           }}
@@ -238,7 +238,7 @@ const Header = (props: Props) => {
           whileTap={{ scale: 1.3 }}
           onClick={() => {
             const segments = path.split("/");
-            segments[1] = `ar`;
+            segments[2] = `ar`;
             const newPath = segments.join("/");
             router.replace(`${newPath}`);
           }}

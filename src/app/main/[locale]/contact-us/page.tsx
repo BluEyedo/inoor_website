@@ -4,9 +4,6 @@ import ContactUs from "../../../../components/ContactUs";
 
 type Props = { params: { locale: string } };
 
-export function generateStaticParams() {
-  return [{ locale: "en" }, { locale: "ar" }];
-}
 
 const ContactUsPage = ({ params }: Props) => {
   return (

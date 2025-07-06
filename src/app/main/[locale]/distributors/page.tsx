@@ -1,30 +1,27 @@
 "use client";
-import { motion } from "motion/react";
 import React from "react";
-import ShippingLogistics from "../../../../components/ShippingLogistics";
+import Ditributors from "../../../../components/Ditributors";
 
 type Props = { params: { locale: string } };
 
-export function generateStaticParams() {
-  return [{ locale: "en" }, { locale: "ar" }];
-}
 
-const ShippingLogisticsPage = ({ params }: Props) => {
+const DistributorsPage = ({ params }: Props) => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between mt-16">
       <div
         className="
-          py-16
+        py-16
           sm:max-w-screen-sm    
           md:max-w-screen-md
           lg:max-w-screen-lg 
           2xl:max-w-screen-xl
+          w-full
           "
       >
-        <ShippingLogistics />
+        <Ditributors />
       </div>
     </main>
   );
 };
 
-export default ShippingLogisticsPage;
+export default DistributorsPage;

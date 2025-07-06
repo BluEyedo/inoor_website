@@ -3,9 +3,6 @@ import ProductSlider from "../../../../components/ProductSlider";
 
 type Props = { params: { locale: string } };
 
-export function generateStaticParams() {
-  return [{ locale: "en" }, { locale: "ar" }];
-}
 
 const OurProductPage = ({ params }: Props) => {
   return (
