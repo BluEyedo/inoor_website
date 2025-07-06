@@ -12,7 +12,8 @@ type Props = {};
 
 const Header = (props: Props) => {
   const path = usePathname();
-  const { locale } = useParams();
+  const lang = useSelector((state: any) => state.lang.value);
+  const dispatch = useDispatch();
   const router = useRouter();
 
   const url = process.env.NODE_EN == "production" ? "/inoor_website" : "";
@@ -22,6 +23,8 @@ const Header = (props: Props) => {
     setOpen(false);
   }, [path]);
 
+
+  
 
   return (
     <>
@@ -44,70 +47,70 @@ const Header = (props: Props) => {
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href={`${url}/main/${locale}`}
+              href={`${url}/main`}
             >
-              {locale == "en" && "Home"}
-              {locale == "ar" && "الرئيسية"}
+              {lang == "en" && "Home"}
+              {lang == "ar" && "الرئيسية"}
             </Link>
 
             <Link
               className={`text-xl lg:text-base ${
-                path.split("/").pop() == "about-us"
+                path.split("/")[2] == "about-us"
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href={`${url}/main/${locale}/about-us`}
+              href={`${url}/main/about-us`}
             >
-              {locale == "en" && "About Us"}
-              {locale == "ar" && "من نحن"}
+              {lang == "en" && "About Us"}
+              {lang == "ar" && "من نحن"}
             </Link>
 
             <Link
               className={`text-xl lg:text-base ${
-                path.split("/").pop() == "our-products"
+                path.split("/")[2] == "our-products"
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href={`${url}/main/${locale}/our-products`}
+              href={`${url}/main/our-products`}
             >
-              {locale == "en" && "Our products"}
-              {locale == "ar" && "منتجاتنا"}
+              {lang == "en" && "Our products"}
+              {lang == "ar" && "منتجاتنا"}
             </Link>
 
             <Link
               className={`text-xl lg:text-base ${
-                path.split("/").pop() == "shipping-logistics"
+                path.split("/")[2] == "shipping-logistics"
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href={`${url}/main/${locale}/shipping-logistics`}
+              href={`${url}/main/shipping-logistics`}
             >
-              {locale == "en" && "Shipping and logistics"}
-              {locale == "ar" && "الشحن والتوزيع"}
+              {lang == "en" && "Shipping and logistics"}
+              {lang == "ar" && "الشحن والتوزيع"}
             </Link>
 
             <Link
               className={`text-xl lg:text-base ${
-                path.split("/").pop() == "distributors"
+                path.split("/")[2] == "distributors"
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href={`${url}/main/${locale}/distributors`}
+              href={`${url}/main/distributors`}
             >
-              {locale == "en" && "Be a Distributor (B2B)"}
-              {locale == "ar" && "كن موزعًا معنا"}
+              {lang == "en" && "Be a Distributor (B2B)"}
+              {lang == "ar" && "كن موزعًا معنا"}
             </Link>
 
             <Link
               className={`text-xl lg:text-base ${
-                path.split("/").pop() == "contact-us"
+                path.split("/")[2] == "contact-us"
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href={`${url}/main/${locale}/contact-us`}
+              href={`${url}/main/contact-us`}
             >
-              {locale == "en" && "Contact us"}
-              {locale == "ar" && "تواصل معنا"}
+              {lang == "en" && "Contact us"}
+              {lang == "ar" && "تواصل معنا"}
             </Link>
           </div>
         </div>
@@ -143,75 +146,75 @@ const Header = (props: Props) => {
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href={`${url}/main/${locale}`}
+              href={`${url}/main`}
             >
-              {locale == "en" && "Home"}
-              {locale == "ar" && "الرئيسية"}
+              {lang == "en" && "Home"}
+              {lang == "ar" && "الرئيسية"}
             </Link>
           </NavbarItem>
           <NavbarItem>
             <Link
               className={`text-xs lg:text-base ${
-                path.split("/").pop() == "about-us"
+                path.split("/")[2] == "about-us"
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href={`${url}/main/${locale}/about-us`}
+              href={`${url}/main/about-us`}
             >
-              {locale == "en" && "About Us"}
-              {locale == "ar" && "من نحن"}
+              {lang == "en" && "About Us"}
+              {lang == "ar" && "من نحن"}
             </Link>
           </NavbarItem>
           <NavbarItem>
             <Link
               className={`text-xs lg:text-base ${
-                path.split("/").pop() == "our-products"
+                path.split("/")[2] == "our-products"
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href={`${url}/main/${locale}/our-products`}
+              href={`${url}/main/our-products`}
             >
-              {locale == "en" && "Our products"}
-              {locale == "ar" && "منتجاتنا"}
+              {lang == "en" && "Our products"}
+              {lang == "ar" && "منتجاتنا"}
             </Link>
           </NavbarItem>
           <NavbarItem>
             <Link
               className={`text-xs lg:text-base ${
-                path.split("/").pop() == "shipping-logistics"
+                path.split("/")[2] == "shipping-logistics"
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href={`${url}/main/${locale}/shipping-logistics`}
+              href={`${url}/main/shipping-logistics`}
             >
-              {locale == "en" && "Shipping and logistics"}
-              {locale == "ar" && "الشحن والتغليف"}
+              {lang == "en" && "Shipping and logistics"}
+              {lang == "ar" && "الشحن والتغليف"}
             </Link>
           </NavbarItem>
           <NavbarItem>
             <Link
               className={`text-xs lg:text-base ${
-                path.split("/").pop() == "distributors"
+                path.split("/")[2] == "distributors"
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href={`${url}/main/${locale}/distributors`}
+              href={`${url}/main/distributors`}
             >
-              {locale == "en" && "Be a Distributor (B2B)"}
-              {locale == "ar" && "كن موزعًا معنا"}
+              {lang == "en" && "Be a Distributor (B2B)"}
+              {lang == "ar" && "كن موزعًا معنا"}
             </Link>
           </NavbarItem>
           <NavbarItem>
             <Link
               className={`text-xs lg:text-base ${
-                path.split("/").pop() == "contact-us"
+                path.split("/")[2] == "contact-us"
                   ? "text-gold-700"
                   : "text-charcoal-500"
               } hover:text-gold-700 duration-100`}
-              href={`${url}/main/${locale}/contact-us`}
+              href={`${url}/main/contact-us`}
             >
-              {locale == "en" && "Contact us"}
-              {locale == "ar" && "تواصل معنا"}
+              {lang == "en" && "Contact us"}
+              {lang == "ar" && "تواصل معنا"}
             </Link>
           </NavbarItem>
         </NavbarContent>
@@ -219,28 +222,30 @@ const Header = (props: Props) => {
 
       <div className="flex flex-row items-center text-xs  fixed sm:top-1 top-0 sm:right-1 right-5 gap-3 z-30">
         <motion.button
-          className={`${locale == "en" ? "text-gold-900" : ""}`}
+          className={`${lang == "en" ? "text-gold-900" : ""}`}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 1.3 }}
           onClick={() => {
-            const segments = path.split("/");
-            segments[2] = `en`;
-            const newPath = segments.join("/");
-            router.replace(`${newPath}`);
+            // const segments = path.split("/");
+            // segments[2] = `en`;
+            // const newPath = segments.join("/");
+            // router.replace(`${newPath}`);
+            dispatch(englishSwitch());
           }}
         >
           EN
         </motion.button>
         <div>|</div>
         <motion.button
-          className={`${locale == "ar" ? "text-gold-900" : ""}`}
+          className={`${lang == "ar" ? "text-gold-900" : ""}`}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 1.3 }}
           onClick={() => {
-            const segments = path.split("/");
-            segments[2] = `ar`;
-            const newPath = segments.join("/");
-            router.replace(`${newPath}`);
+            // const segments = path.split("/");
+            // segments[2] = `ar`;
+            // const newPath = segments.join("/");
+            // router.replace(`${newPath}`);
+            dispatch(arabicSwitch());
           }}
         >
           AR

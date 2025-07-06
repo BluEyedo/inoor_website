@@ -9,11 +9,12 @@ import DhlLogo from "@/../public/dhl.png";
 import AramexLogo from "@/../public/aramex.png";
 import FedexLogo from "@/../public/fedex.png";
 import { useParams } from "next/navigation";
+import { useSelector } from "react-redux";
 
 type Props = {};
 
 const ShippingLogistics = (props: Props) => {
-  const { locale } = useParams();
+  const lang = useSelector((state: any) => state.lang.value);
   return (
     <div className="pb-8 md:pb-16 px-4">
       <motion.div
@@ -25,8 +26,8 @@ const ShippingLogistics = (props: Props) => {
         <div className="flex flex-row">
           <div className="sm:w-[15%] border-b-2 border-charcoal-500" />
           <p className="sm:w-[70%]">
-            {locale == "en" && "Shipping & Packaging Services"}
-            {locale == "ar" && "خدمات الشحن والتغليف"}
+            {lang == "en" && "Shipping & Packaging Services"}
+            {lang == "ar" && "خدمات الشحن والتغليف"}
           </p>
           <div className="sm:w-[15%] border-b-2 border-charcoal-500" />
         </div>
@@ -54,8 +55,8 @@ const ShippingLogistics = (props: Props) => {
             />
           </motion.div>
           <p>
-            {locale == "en" && "Fast delivery to over 20 countries"}
-            {locale == "ar" && "شحن دولي سريع إلى أكثر من 20 دولة"}
+            {lang == "en" && "Fast delivery to over 20 countries"}
+            {lang == "ar" && "شحن دولي سريع إلى أكثر من 20 دولة"}
           </p>
         </div>
         <div className="flex flex-col items-center text-center">
@@ -72,8 +73,8 @@ const ShippingLogistics = (props: Props) => {
             />
           </motion.div>
           <p>
-            {locale == "en" && "Customized packaging with private labeling"}
-            {locale == "ar" && "تغليف بعلامتك التجارية"}
+            {lang == "en" && "Customized packaging with private labeling"}
+            {lang == "ar" && "تغليف بعلامتك التجارية"}
           </p>
         </div>
         <div className="flex flex-col items-center text-center">
@@ -90,8 +91,8 @@ const ShippingLogistics = (props: Props) => {
             />
           </motion.div>
           <p>
-            {locale == "en" && "Delivery time: 5 to 14 business days"}
-            {locale == "ar" && "توصيل خلال 5 إلى 14 يومًا"}
+            {lang == "en" && "Delivery time: 5 to 14 business days"}
+            {lang == "ar" && "توصيل خلال 5 إلى 14 يومًا"}
           </p>
         </div>
         <div className="flex flex-col items-center text-center">
@@ -108,9 +109,9 @@ const ShippingLogistics = (props: Props) => {
             />
           </motion.div>
           <p>
-            {locale == "en" &&
+            {lang == "en" &&
               "Full shipping documentation (invoices, certificates of origin)"}
-            {locale == "ar" && "مستندات الشحن كاملة (فواتير، شهادات منشأ)"}
+            {lang == "ar" && "مستندات الشحن كاملة (فواتير، شهادات منشأ)"}
           </p>
         </div>
       </motion.div>
@@ -124,8 +125,8 @@ const ShippingLogistics = (props: Props) => {
         <div className="flex flex-row ">
           <div className="sm:w-[35%] border-b-2 border-charcoal-500" />
           <p className="sm:w-[30%]">
-            {locale == "en" && "Our Parterns"}
-            {locale == "ar" && "شركاؤنا"}
+            {lang == "en" && "Our Parterns"}
+            {lang == "ar" && "شركاؤنا"}
           </p>
           <div className="sm:w-[35%] border-b-2 border-charcoal-500" />
         </div>
@@ -178,8 +179,8 @@ const ShippingLogistics = (props: Props) => {
           />
         </motion.div>
         <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl lg:col-span-3 justify-self-center">
-          {locale == "en" && "...and more"}
-          {locale == "ar" && "...وغيرها"}
+          {lang == "en" && "...and more"}
+          {lang == "ar" && "...وغيرها"}
         </div>
       </div>
     </div>

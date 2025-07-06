@@ -8,6 +8,7 @@ import care from "@/../public/inoor-care.png";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { useParams } from "next/navigation";
+import { useSelector } from "react-redux";
 
 // TypeScript interfaces
 
@@ -134,7 +135,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
     pause,
   }));
 
-  const { locale } = useParams();
+  const  lang  = useSelector((state: any) => state.lang.value);
 
   return (
     <div className="splide-container h-auto min-h-[500px] sm:min-h-[600px] lg:h-[700px] py-8 sm:py-12 mb-12">
@@ -148,8 +149,8 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
           <div className="flex flex-row ">
             <div className="sm:w-[35%] border-b-2 border-charcoal-500" />
             <p className="sm:w-[30%]">
-              {locale == "en" && "Our Products"}
-              {locale == "ar" && "منتجاتنا"}
+              {lang == "en" && "Our Products"}
+              {lang == "ar" && "منتجاتنا"}
             </p>
             <div className="sm:w-[35%] border-b-2 border-charcoal-500" />
           </div>
@@ -220,22 +221,22 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
                   <div className="p-4 md:p-5 lg:p-6 text-charcoal-500">
                     <h3
                       className={`text-lg md:text-xl lg:text-2xl font-bold mb-3 border-b-2 border-b-gold-300 pb-2 ${
-                        locale == "ar" && "text-end"
+                        lang == "ar" && "text-end"
                       }`}
                     >
-                      {locale == "en" && slide.title}
-                      {locale == "ar" && slide.titleAr}
+                      {lang == "en" && slide.title}
+                      {lang == "ar" && slide.titleAr}
                     </h3>
 
                     {/* Features List */}
                     <ul className="mt-4 space-y-1 text-sm md:text-base">
-                      {locale == "en" &&
+                      {lang == "en" &&
                         slide.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="opacity-80">
                             • {feature}
                           </li>
                         ))}
-                      {locale == "ar" &&
+                      {lang == "ar" &&
                         slide.featuresAr.map((feature, featureIndex) => (
                           <div dir="rtl" key={featureIndex}>
                             <li

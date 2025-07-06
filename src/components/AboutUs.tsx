@@ -22,7 +22,7 @@ const valuesArray = [
 ];
 
 const AboutUs = (props: Props) => {
-  const { locale } = useParams();
+  const  lang  = useSelector((state: any) => state.lang.value);
 
   return (
     <>
@@ -35,8 +35,8 @@ const AboutUs = (props: Props) => {
         >
           <div className="sm:w-[35%] border-b-2 border-charcoal-500" />
           <p className="sm:w-[30%] text-center">
-            {locale == "en" && "Who are We"}
-            {locale == "ar" && "من نحن؟"}
+            {lang == "en" && "Who are We"}
+            {lang == "ar" && "من نحن؟"}
           </p>
           <div className="sm:w-[35%] border-b-2 border-charcoal-500" />
         </motion.div>
@@ -47,9 +47,9 @@ const AboutUs = (props: Props) => {
           viewport={{ once: true }}
           className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-center px-2"
         >
-          {locale == "en" &&
+          {lang == "en" &&
             "INOOR is a global brand built on the values of INOOR "}
-          {locale == "ar" && "هي علامة تجارية عالمية أسست على القيم التالية :"}
+          {lang == "ar" && "هي علامة تجارية عالمية أسست على القيم التالية :"}
         </motion.div>
 
         <div className="mt-4 gap-8 sm:gap-16 md:gap-32 lg:gap-64 flex flex-col sm:flex-row text-lg md:text-xl items-center justify-center">
@@ -75,8 +75,8 @@ const AboutUs = (props: Props) => {
                 className="sm:w-[150px] sm:h-[150px]"
               />
               <p className="text-center text-xl sm:text-2xl md:text-3xl">
-                {locale == "en" && "Beauty"}
-                {locale == "ar" && "الجمال"}
+                {lang == "en" && "Beauty"}
+                {lang == "ar" && "الجمال"}
               </p>
             </motion.div>
           </div>
@@ -102,8 +102,8 @@ const AboutUs = (props: Props) => {
                 className="sm:w-[150px] sm:h-[150px]"
               />
               <p className="text-center text-xl sm:text-2xl md:text-3xl">
-                {locale == "en" && "Health"}
-                {locale == "ar" && "الصحة"}
+                {lang == "en" && "Health"}
+                {lang == "ar" && "الصحة"}
               </p>
             </motion.div>
           </div>
@@ -129,8 +129,8 @@ const AboutUs = (props: Props) => {
                 className="sm:w-[150px] sm:h-[150px]"
               />
               <p className="text-center text-xl sm:text-2xl md:text-3xl">
-                {locale == "en" && "Quality"}
-                {locale == "ar" && "الجودة"}
+                {lang == "en" && "Quality"}
+                {lang == "ar" && "الجودة"}
               </p>
             </motion.div>
           </div>
@@ -145,11 +145,11 @@ const AboutUs = (props: Props) => {
           viewport={{ once: true }}
           className="text-lg sm:text-xl md:text-2xl lg:text-3xl lg:col-span-3 text-center lg:text-left"
         >
-          {locale == "en" &&
+          {lang == "en" &&
             `To become the first choice for beauty and wellness distributors across
           Asia and the Middle East.`}
 
-          {locale == "ar" && (
+          {lang == "ar" && (
             <div dir="rtl" className="text-right">
               أن نكون الخيار الأول لشركاء التجميل والتغذية في آسيا والشرق
               الأوسط.
@@ -181,8 +181,8 @@ const AboutUs = (props: Props) => {
             />
           </motion.div>
           <h2 className="text-center mb-6 md:mb-12 text-charcoal-500">
-            {locale == "en" && "Our Vision"}
-            {locale == "ar" && "رؤيتنا"}
+            {lang == "en" && "Our Vision"}
+            {lang == "ar" && "رؤيتنا"}
           </h2>
         </motion.div>
       </div>
@@ -203,8 +203,8 @@ const AboutUs = (props: Props) => {
             className="sm:w-[150px] sm:h-[150px]"
           />
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-6 md:mb-12 text-charcoal-500">
-            {locale == "en" && "Our Mission"}
-            {locale == "ar" && "مهمتنا"}
+            {lang == "en" && "Our Mission"}
+            {lang == "ar" && "مهمتنا"}
           </h2>
         </motion.div>
 
@@ -215,11 +215,11 @@ const AboutUs = (props: Props) => {
           viewport={{ once: true }}
           className="text-lg  sm:block sm:text-xl md:text-2xl lg:text-3xl lg:col-span-3 text-center lg:text-left order-1 lg:order-2"
         >
-          {locale == "en" &&
+          {lang == "en" &&
             `To deliver effective products and professional logistics that ensure a
           seamless, high-end experience.`}
 
-          {locale == "ar" && (
+          {lang == "ar" && (
             <div dir="rtl" className="text-right">
               توفير منتجات فعالة وشحن احترافي لبناء تجربة راقية للعملاء
               والموزعين.
@@ -237,7 +237,7 @@ const AboutUs = (props: Props) => {
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold flex flex-col sm:flex-row items-center"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center text-charcoal-500 mb-4 sm:mb-0">
-            {locale == "en" && `Our Values`}
+            {lang == "en" && `Our Values`}
           </h2>
           <motion.div
             whileInView={{ scale: 1, y: [12, 0, 12] }}
@@ -269,8 +269,8 @@ const AboutUs = (props: Props) => {
               className="text-center sm:text-left items-center flex-row sm:flex-col xl:flex-row flex gap-3"
             >
               <span className="text-green-600 font-bold "> ✔</span>
-              {locale == "en" && txt.en}
-              {locale == "ar" && txt.ar}
+              {lang == "en" && txt.en}
+              {lang == "ar" && txt.ar}
             </motion.div>
           ))}
         </div>

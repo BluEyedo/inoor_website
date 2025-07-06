@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { useParams } from "next/navigation";
 import React from "react";
+import { useSelector } from "react-redux";
 type Props = {};
 
 const valuesArray = [
@@ -11,7 +12,7 @@ const valuesArray = [
 ];
 
 const Ditributors = (props: Props) => {
-  const { locale } = useParams();
+  const lang = useSelector((state: any) => state.lang.value);
   return (
     <div className="px-4 flex flex-col">
       <motion.div
@@ -22,36 +23,36 @@ const Ditributors = (props: Props) => {
       >
         <div
           className={`${
-            locale == "en" ? "sm:w-[15%]" : "sm:w-[35%]"
+            lang == "en" ? "sm:w-[15%]" : "sm:w-[35%]"
           }  border-b-2 border-charcoal-500`}
         />
         <p
           className={`${
-            locale == "en" ? "sm:w-[70%]" : "sm:w-[30%]"
+            lang == "en" ? "sm:w-[70%]" : "sm:w-[30%]"
           } text-center`}
         >
-          {locale == "en" && "Become a Distributor (B2B)"}
-          {locale == "ar" && "كن موزّعًا معنا"}
+          {lang == "en" && "Become a Distributor (B2B)"}
+          {lang == "ar" && "كن موزّعًا معنا"}
         </p>
         <div
           className={`${
-            locale == "en" ? "sm:w-[15%]" : "sm:w-[35%]"
+            lang == "en" ? "sm:w-[15%]" : "sm:w-[35%]"
           }  border-b-2 border-charcoal-500`}
         />
       </motion.div>
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
         <div className="mb-16">
           <div className=" sm:text-lg md:text-xl lg:text-2xl font-bold mb-2">
-            {locale == "en" &&
+            {lang == "en" &&
               "Interested in representing INOOR in your country?"}
-            {locale == "ar" && (
+            {lang == "ar" && (
               <div dir="rtl">هل ترغب في تمثيل INOOR في بلدك؟</div>
             )}
           </div>
           <div className=" sm:text-lg md:text-xl lg:text-2xl">
-            {locale == "en" &&
+            {lang == "en" &&
               "We’re looking for trusted distributors in beauty and food sectors."}
-            {locale == "ar" && (
+            {lang == "ar" && (
               <div dir="rtl">
                 نحن نبحث عن موزعين موثوقين في مجال التجميل والمنتجات الغذائية.
               </div>
@@ -61,30 +62,30 @@ const Ditributors = (props: Props) => {
 
         <div className="mb-16">
           <div className=" sm:text-lg md:text-xl lg:text-2xl font-bold mb-2">
-            {locale == "en" && "Benefits"}
-            <div dir={"rtl"}>{locale == "ar" && "المزايا"}</div>
+            {lang == "en" && "Benefits"}
+            <div dir={"rtl"}>{lang == "ar" && "المزايا"}</div>
           </div>
           <div className=" sm:text-lg md:text-xl lg:text-2xl">
             {valuesArray.map((txt, ix) => (
               <motion.div
-                dir={locale == "en" ? "ltr" : "rtl"}
+                dir={lang == "en" ? "ltr" : "rtl"}
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.1 * ix }}
                 viewport={{ once: true }}
                 key={ix}
                 className={`text-center ${
-                  locale == "en" ? "sm:text-left" : "sm:text-right"
+                  lang == "en" ? "sm:text-left" : "sm:text-right"
                 } items-center flex-row sm:flex-col xl:flex-row flex gap-3`}
               >
-                {locale == "en" && (
+                {lang == "en" && (
                   <>
                     <span className="text-green-600 font-bold "> ✔</span>{" "}
                     {txt.en}
                   </>
                 )}
 
-                {locale == "ar" && (
+                {lang == "ar" && (
                   <>
                     <span className="text-green-600 font-bold "> ✔</span>
                     {txt.ar}{" "}

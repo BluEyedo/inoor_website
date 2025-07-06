@@ -1,26 +1,26 @@
 "use client";
-import { motion } from "motion/react";
 import React from "react";
-import ShippingLogistics from "../../../../components/ShippingLogistics";
+import ContactUs from "../../../components/ContactUs";
 
 type Props = {};
 
-const ShippingLogisticsPage = (Props: Props) => {
+const ContactUsPage = (Props: Props) => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between mt-16">
       <div
         className="
-          py-16
+        py-16
           sm:max-w-screen-sm    
           md:max-w-screen-md
           lg:max-w-screen-lg 
           2xl:max-w-screen-xl
+          w-full
           "
       >
-        <ShippingLogistics />
+        <ContactUs />
       </div>
     </main>
   );
 };
 
-export default ShippingLogisticsPage;
+export default ContactUsPage;

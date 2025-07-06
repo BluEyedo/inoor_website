@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import * as motion from "motion/react-client";
 import { Divider } from "antd";
 import { useParams } from "next/navigation";
+import { useSelector } from "react-redux";
 
 type Props = {};
 
@@ -77,7 +78,7 @@ const ContactUs = (props: Props) => {
     },
   ];
 
-  const { locale } = useParams();
+  const  lang  = useSelector((state: any) => state.lang.value);
 
   return (
     <>
@@ -90,8 +91,8 @@ const ContactUs = (props: Props) => {
         >
           <div className="sm:w-[35%] border-b-2 border-charcoal-500" />
           <p className="sm:w-[30%] text-center">
-            {locale == "en" && "Contact Us"}
-            {locale == "ar" && "تواصل معنا"}
+            {lang == "en" && "Contact Us"}
+            {lang == "ar" && "تواصل معنا"}
           </p>
           <div className="sm:w-[35%] border-b-2 border-charcoal-500" />
         </motion.div>
@@ -103,8 +104,8 @@ const ContactUs = (props: Props) => {
           viewport={{ once: true }}
           className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-center px-2"
         >
-          {locale == "en" && "Get in Touch"}
-          {locale == "ar" && "لنكن على تواصل"}
+          {lang == "en" && "Get in Touch"}
+          {lang == "ar" && "لنكن على تواصل"}
         </motion.div>
       </div>
 
@@ -138,24 +139,24 @@ const ContactUs = (props: Props) => {
                     {method.icon}
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold mb-2 text-charcoal-500">
-                    {locale == "en" && method.label}
-                    {locale == "ar" && method.labelAr}
+                    {lang == "en" && method.label}
+                    {lang == "ar" && method.labelAr}
                   </h3>
                   <p className="text-lg sm:text-xl text-gray-600 group-hover:text-blue-600 transition-colors">
-                    {locale == "en" && method.value}
-                    {(locale == "ar" && method.valueAr) ?? method.value}
+                    {lang == "en" && method.value}
+                    {(lang == "ar" && method.valueAr) ?? method.value}
                   </p>
                 </a>
               ) : (
                 <div className="text-center">
                   <div className="text-4xl sm:text-5xl mb-4">{method.icon}</div>
                   <h3 className="text-xl sm:text-2xl font-bold mb-2 text-charcoal-500">
-                    {locale == "en" && method.label}
-                    {locale == "ar" && method.labelAr}
+                    {lang == "en" && method.label}
+                    {lang == "ar" && method.labelAr}
                   </h3>
                   <p className="text-lg sm:text-xl text-gray-600">
-                    {locale == "en" && method.value}
-                    {locale == "ar" && <>{method.valueAr ?? method.value}</>}
+                    {lang == "en" && method.value}
+                    {lang == "ar" && <>{method.valueAr ?? method.value}</>}
                   </p>
                 </div>
               )}
@@ -175,8 +176,8 @@ const ContactUs = (props: Props) => {
           viewport={{ once: true }}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-8 md:mb-12 text-charcoal-500"
         >
-          {locale == "en" && "Send us a Message"}
-          {locale == "ar" && "ارسل رسالة"}
+          {lang == "en" && "Send us a Message"}
+          {lang == "ar" && "ارسل رسالة"}
         </motion.div>
 
         <motion.form
@@ -198,8 +199,8 @@ const ContactUs = (props: Props) => {
                 htmlFor="name"
                 className="block text-lg sm:text-xl font-semibold text-charcoal-500 mb-2"
               >
-                {locale == "en" && "📝 Name"}
-                {locale == "ar" && "📝 الإسم"}
+                {lang == "en" && "📝 Name"}
+                {lang == "ar" && "📝 الإسم"}
               </label>
               <input
                 type="text"
@@ -209,7 +210,7 @@ const ContactUs = (props: Props) => {
                 onChange={handleInputChange}
                 required
                 className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-lg"
-                placeholder={locale == "en" ? "Your full name" : "أدخل الإسم"}
+                placeholder={lang == "en" ? "Your full name" : "أدخل الإسم"}
               />
             </motion.div>
 
@@ -223,8 +224,8 @@ const ContactUs = (props: Props) => {
                 htmlFor="email"
                 className="block text-lg sm:text-xl font-semibold text-charcoal-500 mb-2"
               >
-                {locale == "en" && "📧 Email"}
-                {locale == "ar" && "📧 الإيميل"}
+                {lang == "en" && "📧 Email"}
+                {lang == "ar" && "📧 الإيميل"}
               </label>
               <input
                 type="email"
@@ -248,8 +249,8 @@ const ContactUs = (props: Props) => {
                 htmlFor="message"
                 className="block text-lg sm:text-xl font-semibold text-charcoal-500 mb-2"
               >
-                {locale == "en" && "💬 Message"}
-                {locale == "ar" && "💬 رسالة"}
+                {lang == "en" && "💬 Message"}
+                {lang == "ar" && "💬 رسالة"}
               </label>
               <textarea
                 id="message"
@@ -260,7 +261,7 @@ const ContactUs = (props: Props) => {
                 rows={6}
                 className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-lg resize-vertical"
                 placeholder={
-                  locale == "en"
+                  lang == "en"
                     ? "Tell us how we can help you..."
                     : "أخبرنا كيف نخدمك ..."
                 }
@@ -278,8 +279,8 @@ const ContactUs = (props: Props) => {
                 type="submit"
                 className="bg-gradient-to-tr from-gold-700 to-gold-500 text-white font-bold py-4 px-8 rounded-lg text-lg sm:text-xl hover:to-gold-700 hover:from-gold-900 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
-                {locale == "en" && "Send Message ✨"}
-                {locale == "ar" && "ارسال ✨"}
+                {lang == "en" && "Send Message ✨"}
+                {lang == "ar" && "ارسال ✨"}
               </button>
             </motion.div>
           </div>

@@ -6,6 +6,7 @@ import banner2 from "@/../public/banner2.png";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { useParams } from "next/navigation";
+import { useSelector } from "react-redux";
 
 type Props = {};
 
@@ -23,7 +24,7 @@ const Hero = (props: Props) => {
     speed: 600,
   };
 
-  const { locale } = useParams();
+  const  lang  = useSelector((state: any) => state.lang.value);
 
   return (
     <div className="w-full mt-16 h-[467px]">
@@ -45,10 +46,10 @@ const Hero = (props: Props) => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
               viewport={{ once: true }}
-              className={`text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl ${locale && "mt-3"}`}
+              className={`text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl ${lang && "mt-3"}`}
             >
-              {locale == "en" && "Quality Begins at the Source"}
-              {locale == "ar" && "الجودة تبدأ من المصدر"}
+              {lang == "en" && "Quality Begins at the Source"}
+              {lang == "ar" && "الجودة تبدأ من المصدر"}
             </motion.p>
           </div>
           <Image
